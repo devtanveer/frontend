@@ -11,14 +11,6 @@ import { useAuth } from '../../components/AuthContext';
 
 
 const AdminDashboard = () => {
-  // return (
-  //   <div>
-  //     <h1>Admin Dashboard</h1>
-  //     {/* <Dashboard /> */}
-  //     { <AdminProfile/> }
-  //   {/* {<UpdateUser/>} */}
-  //   </div>
-  // );
   const navigate = useNavigate();
   const { logout } = useAuth();
 
