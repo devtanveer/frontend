@@ -22,7 +22,7 @@ const AdminProfile = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/users');
+        const response = await axios.get('https://backend-lovat-mu.vercel.app/users');
         setUsers(response.data);
 
         console.log('Fetched User Data:', response.data.map(user => {
@@ -69,7 +69,7 @@ const AdminProfile = () => {
     console.log('Updated User Data:', JSON.stringify(updatedUserData, null, 2));
 
     try {
-      await axios.post('http://localhost:4000/update-user', updatedUserData);
+      await axios.post('https://backend-lovat-mu.vercel.app/update-user', updatedUserData);
       console.log('User updated successfully!');
       setEditingUserId(null);
       window.location.reload();
@@ -80,7 +80,7 @@ const AdminProfile = () => {
 
   const handleDeleteClick = async (userId) => {
     try {
-      await axios.delete(`http://localhost:4000/delete-user/${userId}`);
+      await axios.delete(`https://backend-lovat-mu.vercel.app/delete-user/${userId}`);
       console.log('User deleted successfully!');
       window.location.reload();
     } catch (error) {
