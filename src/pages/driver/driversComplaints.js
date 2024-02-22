@@ -9,7 +9,7 @@ const ComplaintsListd = () => {
     useEffect(() => {
         const fetchComplaints = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/complaints/assigned');
+                const response = await axios.get('https://backend-lilac-nu.vercel.app/complaints/assigned');
                 setComplaints(response.data);
             } catch (error) {
                 console.error('Error fetching complaints:', error);
@@ -21,7 +21,7 @@ const ComplaintsListd = () => {
 
     const handleStatusChange = async (complaintId, newStatus) => {
         try {
-            const response = await axios.post(`http://localhost:4000/update-complaint-status/${complaintId}`, { status: newStatus });
+            const response = await axios.post(`https://backend-lilac-nu.vercel.app/update-complaint-status/${complaintId}`, { status: newStatus });
             console.log('Complaint status updated successfully:', response.data);
             // Update the local state or perform any necessary actions after successful update
             window.location.reload(); // Reload the page after confirmation
