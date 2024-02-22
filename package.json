@@ -39,7 +39,7 @@
       "localhost",
       ".localhost"
     ],
-    "proxy": "http://localhost:4000"
+    "proxy": "https://backend-lilac-nu.vercel.app"
   },
   "eslintConfig": {
     "extends": [
