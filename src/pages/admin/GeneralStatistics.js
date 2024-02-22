@@ -17,9 +17,9 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const resolvedResponse = await axios.get('http://localhost:4000/complaints/resolved/count');
-        const progressResponse = await axios.get('http://localhost:4000/complaints/progress/count');
-        const totalResponse = await axios.get('http://localhost:4000/complaints/count');
+        const resolvedResponse = await axios.get('https://backend-lilac-nu.vercel.app/complaints/resolved/count');
+        const progressResponse = await axios.get('https://backend-lilac-nu.vercel.app/complaints/progress/count');
+        const totalResponse = await axios.get('https://backend-lilac-nu.vercel.app/complaints/count');
 
         const resolvedCount = resolvedResponse.data.resolvedCount || 0;
         const progressCount = progressResponse.data.progressCount || 0;
