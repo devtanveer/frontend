@@ -30,12 +30,12 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const complaintsResponse = await axios.get('http://localhost:4000/complaints/count');
-        const resolvedResponse = await axios.get('http://localhost:4000/complaints/resolved/count');
-        const progressResponse = await axios.get('http://localhost:4000/complaints/progress/count');
-        const binsResponse = await axios.get('http://localhost:4000/bins/count');
-        const usersResponse = await axios.get('http://localhost:4000/users/count');
-        const driversResponse = await axios.get('http://localhost:4000/drivers/count');
+        const complaintsResponse = await axios.get('https://backend-lilac-nu.vercel.app/complaints/count');
+        const resolvedResponse = await axios.get('https://backend-lilac-nu.vercel.app/complaints/resolved/count');
+        const progressResponse = await axios.get('https://backend-lilac-nu.vercel.app/complaints/progress/count');
+        const binsResponse = await axios.get('https://backend-lilac-nu.vercel.app/bins/count');
+        const usersResponse = await axios.get('https://backend-lilac-nu.vercel.app/users/count');
+        const driversResponse = await axios.get('https://backend-lilac-nu.vercel.app/drivers/count');
 
         setTotalComplaints(complaintsResponse.data.count);
         setResolvedComplaints(resolvedResponse.data.resolvedCount);
