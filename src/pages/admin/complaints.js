@@ -65,7 +65,7 @@ const AdminComplaint = () => {
     useEffect(() => {
         const fetchComplaints = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/complaints');
+                const response = await axios.get('https://backend-lilac-nu.vercel.app/complaints');
                 setComplaints(response.data);
             } catch (error) {
                 console.error('Error fetching complaints:', error);
@@ -78,7 +78,7 @@ const AdminComplaint = () => {
     useEffect(() => {
         const fetchDrivers = async () => {
             try {
-                const response = await axios.get('http://localhost:4000/drivers');
+                const response = await axios.get('https://backend-lilac-nu.vercel.app/drivers');
                 const driverNames = response.data.map(driver => driver.name);
                 setDrivers(driverNames);
             } catch (error) {
@@ -90,7 +90,7 @@ const AdminComplaint = () => {
 
     const handleStatusChange = async (complaintId, newStatus) => {
       try {
-          const response = await axios.post(`http://localhost:4000/update-complaint-status/${complaintId}`, { status: newStatus });
+          const response = await axios.post(`https://backend-lilac-nu.vercel.app/update-complaint-status/${complaintId}`, { status: newStatus });
           console.log('Complaint status updated successfully:', response.data);
           // Update the local state or perform any necessary actions after successful update
       } catch (error) {
@@ -126,7 +126,7 @@ const AdminComplaint = () => {
         console.log('Selected Driver:', driver);
     
         // Make an HTTP POST request to your backend API endpoint
-        const response = await axios.post('http://localhost:4000/assign-driver', {
+        const response = await axios.post('https://backend-lilac-nu.vercel.app/assign-driver', {
           complaintId,
           driver
         });
