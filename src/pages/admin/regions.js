@@ -88,7 +88,7 @@ const BinsRegions = () => {
 
   const handleRegionStatusChange = async (regionCode) => {
     try {
-      await axios.patch(`http://localhost:4000/bins/${regionCode}`, { regionStatus: regions.find(region => region.regionCode === regionCode).regionStatus === 'Active' ? 'Inactive' : 'Active' });
+      await axios.patch(`https://backend-lilac-nu.vercel.app/bins/${regionCode}`, { regionStatus: regions.find(region => region.regionCode === regionCode).regionStatus === 'Active' ? 'Inactive' : 'Active' });
       setRegions((prevRegions) =>
         prevRegions.map((region) =>
           region.regionCode === regionCode
@@ -113,7 +113,7 @@ const BinsRegions = () => {
 
   const handleDeleteRegion = async (regionCode) => {
     try {
-      await axios.delete(`http://localhost:4000/delete-bin-region/${regionCode}`);
+      await axios.delete(`https://backend-lilac-nu.vercel.app/delete-bin-region/${regionCode}`);
       setRegions((prevRegions) =>
         prevRegions.filter((region) => region.regionCode !== regionCode)
       );
