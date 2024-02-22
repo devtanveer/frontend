@@ -41,7 +41,7 @@ const ComplaintForm = () => {
         formDataWithFile.append('userPhone', formData.userPhone);
         formDataWithFile.append('binAddress', formData.binAddress);
     
-        const response = await axios.post('http://localhost:4000/addComplaint', formDataWithFile, {
+        const response = await axios.post('https://backend-lilac-nu.vercel.app/addComplaint', formDataWithFile, {
           headers: {
             'Content-Type': 'multipart/form-data', // Set content type to multipart/form-data
           },
