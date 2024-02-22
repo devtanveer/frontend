@@ -32,7 +32,7 @@ const DriverProfile = () => {
     e.preventDefault();
   
     try {
-      const response = await axios.post('http://localhost:4000/update-username', {
+      const response = await axios.post('https://backend-lilac-nu.vercel.app/update-username', {
         userId: userData.userId, // Assuming you have userId stored in userData
         newUsername: userData.username // Pass the new username to the backend
       });
