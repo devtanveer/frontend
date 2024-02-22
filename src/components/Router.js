@@ -16,7 +16,14 @@ import AdminProfile from '../pages/admin/AdminProfile';  // Import the AdminProf
 import AdminComplaint from '../pages/admin/complaints';
 import BinsRegions from '../pages/admin/regions';
 import ProfileUpdateUser from '../pages/admin/UpdateUser';
-
+import ComplaintForm from './ComplaintForm';
+import ComplaintsList from './ComplaintsList';
+import GeneralStatistics from '../pages/admin/GeneralStatistics';
+import ComplaintPage from '../pages/user/addcomplaint';
+import UserProfile from '../pages/user/userprofile';
+import ComplaintsListd from '../pages/driver/driversComplaints';
+import LocationsMap from '../pages/driver/locationmap';
+import DriverProfile from '../pages/driver/driverprofile';
 
 const OutletOrRedirect = () => {
   const isAuthenticated = !!localStorage.getItem('token');
@@ -86,6 +93,15 @@ export default function Router() {
             path="/adminprofile"
             element={<ProtectedRoute element={<AdminProfile />} role="admin" />}
           />
+
+<Route
+            path="/locationmap"
+            element={<ProtectedRoute element={<LocationsMap />} role="driver" />}
+          />
+<Route
+            path="/GeneralStatistics"
+            element={<ProtectedRoute element={<GeneralStatistics />} role="admin" />}
+          />
         
 
         <Route
@@ -101,8 +117,41 @@ export default function Router() {
             path="/profile"
             element={<ProtectedRoute element={<ProfileUpdateUser />} role="admin" />}
           />
+
+<Route
+            path="/addcomplaint"
+            element={<ProtectedRoute element={<ComplaintPage />} role="user" />}
+          />
+
+          
+<Route
+            path="/ComplaintsList"
+            element={<ProtectedRoute element={<ComplaintsList />} role="user" />}
+          />
+<Route
+            path="/profile-setting"
+            element={<ProtectedRoute element={<DriverProfile />} role="driver" />}
+          />
+
+<Route
+            path="/driverdashboard"
+            element={<ProtectedRoute element={<DriverDashboard />} role="user" />}
+          />
+
+<Route
+            path="/driverscomplaints"
+            element={<ProtectedRoute element={<ComplaintsListd />} role="driver" />}
+          />
+
+
+<Route
+            path="/userprofile"
+            element={<ProtectedRoute element={<UserProfile />} role="user" />}
+          />
+
         
         </Route>
+        
         
       </Routes>
     </BrowserRouter>

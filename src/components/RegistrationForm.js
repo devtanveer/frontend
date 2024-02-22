@@ -29,7 +29,7 @@ const RegistrationForm = () => {
     e.preventDefault();
   
     try {
-      const response = await axios.post('https://backend-lovat-mu.vercel.app/users', {
+      const response = await axios.post('http://localhost:4000/users', {
         ...formData,
       });
   

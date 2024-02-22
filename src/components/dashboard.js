@@ -22,16 +22,16 @@ const Dashboard = () => {
         <div className="col-md-2 sidebar">
           <h2></h2>
           <div className="nav flex-column">
-            <Link to="/dashboard" className="nav-link">
+            <Link to="/userdashboard" className="nav-link">
               <FontAwesomeIcon icon={faHome} /> Home
             </Link>
-            <Link to="/dashboard/profile" className="nav-link">
+            <Link to="/userprofile" className="nav-link">
               <FontAwesomeIcon icon={faUser} /> Profile
             </Link>
-            <Link to="/dashboard/messages" className="nav-link">
+            <Link to="/usercomplaints" className="nav-link">
               <FontAwesomeIcon icon={faEnvelope} /> Messages
             </Link>
-            <Link to="/dashboard/settings" className="nav-link">
+            <Link to="/usersettings" className="nav-link">
               <FontAwesomeIcon icon={faCog} /> Settings
             </Link>
             <button onClick={handleLogout} className="nav-link">

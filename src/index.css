@@ -23,3 +23,15 @@ code {
   height: auto; 
 }
 
+
+.new-complaint {
+  background-color: #ec0505; /* Red */
+}
+
+.in-progress {
+  background-color: #d9c707; /* Orange */
+}
+
+.resolved {
+  background-color: #0cfb0c; /* Green */
+}
