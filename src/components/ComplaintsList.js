@@ -7,7 +7,7 @@ const ComplaintsList = () => {
   // Fetch complaints from the backend
   const fetchComplaints = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/complaints');
+      const response = await axios.get('https://backend-lilac-nu.vercel.app/complaints');
       setComplaints(response.data);
     } catch (error) {
       console.error('Error fetching complaints:', error);
