@@ -25,23 +25,33 @@ const RegistrationForm = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    try {
-      const response = await axios.post('https://backend-lilac-nu.vercel.app/users', {
-        ...formData,
-      });
-  
-      console.log(response.data);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await axios.post('https://backend-lilac-nu.vercel.app/users', {
+      ...formData,
+    });
+
+    console.log('Response:', response); // Log the entire response object
+
+    // Check if response.data is defined and has the expected structure
+    if (response.data) {
+      console.log('Data:', response.data); // Log the data if available
       setSuccessMessage('Registration successful!');
       setError('');
-    } catch (error) {
-      console.error('Error registering user:', error.response.data);
+    } else {
+      console.error('Invalid response data:', response.data);
       setSuccessMessage('');
-      setError('Registration failed. Please check your information. Email and User ID must be Unique');
+      setError('Registration failed. Unexpected response from the server.');
     }
-  };
+  } catch (error) {
+    console.error('Error registering user:', error.response.data);
+    setSuccessMessage('');
+    setError('Registration failed. Please check your information. Email and User ID must be Unique');
+  }
+};
+
   
   
 
